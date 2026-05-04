@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Day 14 – Reusable Modal Component built with HTML, CSS & JavaScript" />
+    <title>Day 14 – Reusable Modal Component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="page-header">
+      <h1>Reusable Modal Component</h1>
+    </header>
+
+    <main class="demo-grid">
+
+      <div class="card" id="card-info">
+        <div class="card-icon">ℹ️</div>
+        <h2>Info Modal</h2>
+        <p>Display general information or tips to the user.</p>
+        <button class="btn btn-info" data-modal="modal-info" id="open-info">Open Info</button>
+      </div>
+
+      <div class="card" id="card-success">
+        <div class="card-icon">✅</div>
+        <h2>Success Modal</h2>
+        <p>Confirm that an action was completed successfully.</p>
+        <button class="btn btn-success" data-modal="modal-success" id="open-success">Open Success</button>
+      </div>
+
+      <div class="card" id="card-warning">
+        <div class="card-icon">⚠️</div>
+        <h2>Warning Modal</h2>
+        <p>Warn the user before performing a destructive action.</p>
+        <button class="btn btn-warning" data-modal="modal-warning" id="open-warning">Open Warning</button>
+      </div>
+
+      <div class="card" id="card-danger">
+        <div class="card-icon">🗑️</div>
+        <h2>Danger Modal</h2>
+        <p>Confirm before permanently deleting something.</p>
+        <button class="btn btn-danger" data-modal="modal-danger" id="open-danger">Open Danger</button>
+      </div>
+
+    </main>
+
+    <div class="modal-overlay" id="modal-info" role="dialog" aria-modal="true" aria-labelledby="modal-info-title">
+      <div class="modal modal--info">
+        <button class="modal__close" data-close id="close-info-x" aria-label="Close modal">✕</button>
+        <div class="modal__icon">ℹ️</div>
+        <h3 class="modal__title" id="modal-info-title">Did You Know?</h3>
+        <p class="modal__body">
+          Modals help keep users focused by presenting information in an overlay
+          without navigating away from the current page. They're perfect for
+          confirmations, alerts, and forms.
+        </p>
+        <div class="modal__footer">
+          <button class="btn btn-info" data-close id="close-info">Got it!</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-success" role="dialog" aria-modal="true" aria-labelledby="modal-success-title">
+      <div class="modal modal--success">
+        <button class="modal__close" data-close id="close-success-x" aria-label="Close modal">✕</button>
+        <div class="modal__icon">✅</div>
+        <h3 class="modal__title" id="modal-success-title">Changes Saved!</h3>
+        <p class="modal__body">
+          Your profile has been updated successfully. All changes are now live
+          and visible to other users.
+        </p>
+        <div class="modal__footer">
+          <button class="btn btn-success" data-close id="close-success">Awesome!</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-warning" role="dialog" aria-modal="true" aria-labelledby="modal-warning-title">
+      <div class="modal modal--warning">
+        <button class="modal__close" data-close id="close-warning-x" aria-label="Close modal">✕</button>
+        <div class="modal__icon">⚠️</div>
+        <h3 class="modal__title" id="modal-warning-title">Heads Up!</h3>
+        <p class="modal__body">
+          You are about to leave without saving your changes. Any unsaved work
+          will be lost. Are you sure you want to continue?
+        </p>
+        <div class="modal__footer">
+          <button class="btn btn-outline" data-close id="close-warning-cancel">Cancel</button>
+          <button class="btn btn-warning" data-close id="close-warning-continue">Yes, Leave</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-danger" role="dialog" aria-modal="true" aria-labelledby="modal-danger-title">
+      <div class="modal modal--danger">
+        <button class="modal__close" data-close id="close-danger-x" aria-label="Close modal">✕</button>
+        <div class="modal__icon">🗑️</div>
+        <h3 class="modal__title" id="modal-danger-title">Delete Account?</h3>
+        <p class="modal__body">
+          This action is <strong>permanent</strong> and cannot be undone. All
+          your data, settings, and history will be erased immediately.
+        </p>
+        <div class="modal__footer">
+          <button class="btn btn-outline" data-close id="close-danger-cancel">Cancel</button>
+          <button class="btn btn-danger" data-close id="close-danger-delete">Yes, Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
